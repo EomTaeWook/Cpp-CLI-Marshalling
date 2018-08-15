@@ -104,12 +104,12 @@ namespace ProtoType
                     if (process.DllProcess is CS.CSInterface)
                     {
                         var p = process.DllProcess as CS.CSInterface;
-                        p.OnNotify += OnNotify; //옵저버 패턴 생각하면 됨
+                        p.OnNotify += OnNotify;
                     }
                     else if (process.DllProcess is Cpp.CppInterface)
                     {
                         var p = process.DllProcess as Cpp.CppInterface;
-                        p.OnNotify += OnNotify; //옵저버 패턴 생각하면 됨
+                        p.OnNotify += OnNotify;
                     }
                     _processes.TryAdd(type.Name, process);
                 }
