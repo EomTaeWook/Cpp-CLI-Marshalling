@@ -1,5 +1,5 @@
 #pragma once
-#include "../Native/Native.h"
+#include "../CppNative/Native.h"
 //C++/Cli .net 환경에서 구동되는 C++
 public ref class CppWrapper : Cpp::CppInterface
 {

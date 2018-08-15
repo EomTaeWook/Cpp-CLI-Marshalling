@@ -52,22 +52,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CppInteface\CppInteface.vcxproj">
-      <Project>{d4e2cf3f-0e40-4f6e-9678-de2d4b05fa91}</Project>
-      <Name>CppWrapper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CppInterface\CppInterface.vcxproj">
       <Project>{afc3ab4d-15c9-4567-a26f-23d69c1516db}</Project>
       <Name>CppInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CppWrapper\CppWrapper.vcxproj">
+      <Project>{d4e2cf3f-0e40-4f6e-9678-de2d4b05fa91}</Project>
+      <Name>CppWrapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\CSInteface\CSInteface.csproj">
       <Project>{73b657e8-5632-44e8-94af-30b7da1ebb32}</Project>
       <Name>CSInteface</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
-    <ProjectReference Include="..\NativeCS\NativeCS.csproj">
+    <ProjectReference Include="..\CSNative\CSNative.csproj">
       <Project>{833ec8c2-55c7-43f9-879c-2fc3e09fda16}</Project>
-      <Name>NativeCS</Name>
+      <Name>CSNative</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

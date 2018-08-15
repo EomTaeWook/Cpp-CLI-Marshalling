@@ -38,14 +38,14 @@ namespace ProtoType
             //등록되어 있는 Dll 클래스에게 Notify 전달
             foreach (var item in _processes)
             {
-                var method = item.Value.DllProcess.GetType().GetMethod("InCommingMessage", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                var method = item.Value.DllProcess.GetType().GetMethod("InCommingMessage", BindingFlags.Public | BindingFlags.Instance);
                 method?.Invoke(item.Value.DllProcess, new object[] { message });
             }
         }
         private void ProcessStart(object process)
         {
             ProcessObject state = process as ProcessObject;
-            var stopMethod = state.DllProcess.GetType().GetMethod("Stop", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+            var stopMethod = state.DllProcess.GetType().GetMethod("Stop", BindingFlags.Instance | BindingFlags.Public);
             while (!state.CancellationToken.IsCancellationRequested)
             {
                 try
@@ -53,10 +53,10 @@ namespace ProtoType
                     if (state.Started)
                         continue;
 
-                    var initMethod = state.DllProcess.GetType().GetMethod("Init", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+                    var initMethod = state.DllProcess.GetType().GetMethod("Init", BindingFlags.Instance | BindingFlags.Public);
                     initMethod?.Invoke(state.DllProcess, null);
 
-                    var runMethod = state.DllProcess.GetType().GetMethod("Run", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+                    var runMethod = state.DllProcess.GetType().GetMethod("Run", BindingFlags.Instance | BindingFlags.Public);
                     runMethod?.Invoke(state.DllProcess, null);
 
                     state.Started = true;

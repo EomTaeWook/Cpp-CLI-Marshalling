@@ -20,18 +20,18 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E31CF140-F968-4AAB-BC60-D008B7149815}</ProjectGuid>
-    <RootNamespace>Native</RootNamespace>
+    <ProjectGuid>{D4E2CF3F-0E40-4F6E-9678-DE2D4B05FA91}</ProjectGuid>
+    <RootNamespace>CppInteface</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>CppUnManagedNative</ProjectName>
+    <ProjectName>CppWrapper</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
-    <CLRSupport>false</CLRSupport>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -76,7 +76,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -117,10 +117,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Native.h" />
+    <ClInclude Include="CppWrapper.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Native.cpp" />
+    <ClCompile Include="CppWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CppInterface\CppInterface.vcxproj">
+      <Project>{afc3ab4d-15c9-4567-a26f-23d69c1516db}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CppNative\CppNative.vcxproj">
+      <Project>{e31cf140-f968-4aab-bc60-d008b7149815}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Native\Native.vcxproj">
+      <Project>{e31cf140-f968-4aab-bc60-d008b7149815}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
