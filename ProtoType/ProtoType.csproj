@@ -63,7 +63,6 @@
     <ProjectReference Include="..\CSInteface\CSInteface.csproj">
       <Project>{73b657e8-5632-44e8-94af-30b7da1ebb32}</Project>
       <Name>CSInteface</Name>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
     <ProjectReference Include="..\CSNative\CSNative.csproj">
       <Project>{833ec8c2-55c7-43f9-879c-2fc3e09fda16}</Project>
