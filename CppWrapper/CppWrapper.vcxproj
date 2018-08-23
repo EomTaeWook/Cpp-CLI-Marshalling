@@ -129,9 +129,6 @@
     <ProjectReference Include="..\CppNative\CppNative.vcxproj">
       <Project>{e31cf140-f968-4aab-bc60-d008b7149815}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Native\Native.vcxproj">
-      <Project>{e31cf140-f968-4aab-bc60-d008b7149815}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
